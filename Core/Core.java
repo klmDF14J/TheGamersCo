@@ -33,56 +33,85 @@ public void load(FMLInitializationEvent evt)
   {
   proxy.registerRenderInformation();
   test = new Item(400).setIconCoord(0, 0).setItemName("test");
-  whiteWoolSlab = new WoolSlab(3000, false, Material.cloth, 64).setBlockName("WhiteWoolSlab");
-  orangeWoolSlab = new WoolSlab(3001, false, Material.cloth, 210).setBlockName("WhiteWoolSlab");
-  magnetaWoolSlab = new WoolSlab(3002, false, Material.cloth, 194).setBlockName("WhiteWoolSlab");
-  lightBlueWoolSlab = new WoolSlab(3003, false, Material.cloth, 178).setBlockName("WhiteWoolSlab");
-  yellowWoolSlab = new WoolSlab(3004, false, Material.cloth, 162).setBlockName("WhiteWoolSlab");
-  limeWoolSlab = new WoolSlab(3005, false, Material.cloth, 146).setBlockName("WhiteWoolSlab");
-  pinkWoolSlab = new WoolSlab(3006, false, Material.cloth, 130).setBlockName("WhiteWoolSlab");
-  greyWoolSlab = new WoolSlab(3007, false, Material.cloth, 114).setBlockName("WhiteWoolSlab");
-  lightGreyWoolSlab = new WoolSlab(3008, false, Material.cloth, 225).setBlockName("WhiteWoolSlab");
-  cyanWoolSlab = new WoolSlab(3009, false, Material.cloth, 209).setBlockName("WhiteWoolSlab");
-  purpleWoolSlab = new WoolSlab(3010, false, Material.cloth, 193).setBlockName("WhiteWoolSlab");
-  blueWoolSlab = new WoolSlab(3011, false, Material.cloth, 177).setBlockName("WhiteWoolSlab");
-  brownWoolSlab = new WoolSlab(3012, false, Material.cloth, 161).setBlockName("WhiteWoolSlab");
-  greenWoolSlab = new WoolSlab(3013, false, Material.cloth, 145).setBlockName("WhiteWoolSlab");
-  redWoolSlab = new WoolSlab(3014, false, Material.cloth, 129).setBlockName("WhiteWoolSlab");
-  blackWoolSlab = new WoolSlab(3015, false, Material.cloth, 113).setBlockName("WhiteWoolSlab");
-  GameRegistry.registerBlock(whiteWoolSlab);
-  GameRegistry.registerBlock(orangeWoolSlab);
-  GameRegistry.registerBlock(magnetaWoolSlab);
-  GameRegistry.registerBlock(lightBlueWoolSlab);
-  GameRegistry.registerBlock(yellowWoolSlab);
-  GameRegistry.registerBlock(limeWoolSlab);
-  GameRegistry.registerBlock(pinkWoolSlab);
-  GameRegistry.registerBlock(greyWoolSlab);
-  GameRegistry.registerBlock(lightGreyWoolSlab);
-  GameRegistry.registerBlock(cyanWoolSlab);
-  GameRegistry.registerBlock(purpleWoolSlab);
-  GameRegistry.registerBlock(blueWoolSlab);
-  GameRegistry.registerBlock(brownWoolSlab);
-  GameRegistry.registerBlock(greenWoolSlab);
-  GameRegistry.registerBlock(redWoolSlab);
-  GameRegistry.registerBlock(blackWoolSlab);
+  defineWoolSlabs();
+  setCreativeTabsForWoolSlabs();
+  registerWoolSlabs();
+  addNamesForWoolSlabs();
   LanguageRegistry.addName(test, "Test");
-  LanguageRegistry.addName(whiteWoolSlab, "White Wool Slab");
+  
   test.setCreativeTab(CreativeTabs.tabDecorations);
-  whiteWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
-  orangeWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
-  magnetaWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
-  lightBlueWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
-  yellowWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
-  limeWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
-  pinkWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
-  greyWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
-  lightGreyWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
-  cyanWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
-  purpleWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
-  blueWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
-  brownWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
-  greenWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
-  redWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
-  blackWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
+ 
   }
+public void defineWoolSlabs() {
+	  whiteWoolSlab = new WoolSlab(3000, false, Material.cloth, 64).setBlockName("WhiteWoolSlab");
+	  orangeWoolSlab = new WoolSlab(3001, false, Material.cloth, 210).setBlockName("OrangeWoolSlab");
+	  magnetaWoolSlab = new WoolSlab(3002, false, Material.cloth, 194).setBlockName("MagnetaWoolSlab");
+	  lightBlueWoolSlab = new WoolSlab(3003, false, Material.cloth, 178).setBlockName("LightBlueWoolSlab");
+	  yellowWoolSlab = new WoolSlab(3004, false, Material.cloth, 162).setBlockName("YellowWoolSlab");
+	  limeWoolSlab = new WoolSlab(3005, false, Material.cloth, 146).setBlockName("LimeWoolSlab");
+	  pinkWoolSlab = new WoolSlab(3006, false, Material.cloth, 130).setBlockName("PinkWoolSlab");
+	  greyWoolSlab = new WoolSlab(3007, false, Material.cloth, 114).setBlockName("GreyWoolSlab");
+	  lightGreyWoolSlab = new WoolSlab(3008, false, Material.cloth, 225).setBlockName("LightGreyWoolSlab");
+	  cyanWoolSlab = new WoolSlab(3009, false, Material.cloth, 209).setBlockName("CyanWoolSlab");
+	  purpleWoolSlab = new WoolSlab(3010, false, Material.cloth, 193).setBlockName("PurpleWoolSlab");
+	  blueWoolSlab = new WoolSlab(3011, false, Material.cloth, 177).setBlockName("BlueWoolSlab");
+	  brownWoolSlab = new WoolSlab(3012, false, Material.cloth, 161).setBlockName("BrownWoolSlab");
+	  greenWoolSlab = new WoolSlab(3013, false, Material.cloth, 145).setBlockName("GreenWoolSlab");
+	  redWoolSlab = new WoolSlab(3014, false, Material.cloth, 129).setBlockName("RedWoolSlab");
+	  blackWoolSlab = new WoolSlab(3015, false, Material.cloth, 113).setBlockName("BlackWoolSlab");
+}
+public void setCreativeTabsForWoolSlabs() {
+	 whiteWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
+	  orangeWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
+	  magnetaWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
+	  lightBlueWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
+	  yellowWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
+	  limeWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
+	  pinkWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
+	  greyWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
+	  lightGreyWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
+	  cyanWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
+	  purpleWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
+	  blueWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
+	  brownWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
+	  greenWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
+	  redWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
+	  blackWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
+}
+public void registerWoolSlabs() {
+	  GameRegistry.registerBlock(whiteWoolSlab);
+	  GameRegistry.registerBlock(orangeWoolSlab);
+	  GameRegistry.registerBlock(magnetaWoolSlab);
+	  GameRegistry.registerBlock(lightBlueWoolSlab);
+	  GameRegistry.registerBlock(yellowWoolSlab);
+	  GameRegistry.registerBlock(limeWoolSlab);
+	  GameRegistry.registerBlock(pinkWoolSlab);
+	  GameRegistry.registerBlock(greyWoolSlab);
+	  GameRegistry.registerBlock(lightGreyWoolSlab);
+	  GameRegistry.registerBlock(cyanWoolSlab);
+	  GameRegistry.registerBlock(purpleWoolSlab);
+	  GameRegistry.registerBlock(blueWoolSlab);
+	  GameRegistry.registerBlock(brownWoolSlab);
+	  GameRegistry.registerBlock(greenWoolSlab);
+	  GameRegistry.registerBlock(redWoolSlab);
+	  GameRegistry.registerBlock(blackWoolSlab);
+}
+public void addNamesForWoolSlabs() {
+	LanguageRegistry.addName(whiteWoolSlab, "White Wool Slab");
+	LanguageRegistry.addName(orangeWoolSlab, "Orange Wool Slab");
+	LanguageRegistry.addName(magnetaWoolSlab, "Magneta Wool Slab");
+	LanguageRegistry.addName(lightBlueWoolSlab, "Light Blue Wool Slab");
+	LanguageRegistry.addName(yellowWoolSlab, "Yellow Wool Slab");
+	LanguageRegistry.addName(limeWoolSlab, "Lime Wool Slab");
+	LanguageRegistry.addName(pinkWoolSlab, "Pink Wool Slab");
+	LanguageRegistry.addName(greyWoolSlab, "Grey Wool Slab");
+	LanguageRegistry.addName(lightGreyWoolSlab, "Light Grey Wool Slab");
+	LanguageRegistry.addName(cyanWoolSlab, "Cyan Wool Slab");
+	LanguageRegistry.addName(purpleWoolSlab, "Purple Wool Slab");
+	LanguageRegistry.addName(blueWoolSlab, "Blue Wool Slab");
+	LanguageRegistry.addName(brownWoolSlab, "Brown Wool Slab");
+	LanguageRegistry.addName(greenWoolSlab, "Green Wool Slab");
+	LanguageRegistry.addName(redWoolSlab, "Red Wool Slab");
+	LanguageRegistry.addName(blackWoolSlab, "Black Wool Slab");
+}
 }
