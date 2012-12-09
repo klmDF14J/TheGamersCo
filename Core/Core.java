@@ -18,11 +18,13 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 @Mod( modid = "TheGamersCo", name="The Gamers Co Mod", version="0.1")
 @NetworkMod(clientSideRequired = true,serverSideRequired = false)
+
 public class Core
-{       
+{   
+	
 	public static Item test;
 	public static Block whiteWoolSlab, orangeWoolSlab, magnetaWoolSlab, lightBlueWoolSlab, yellowWoolSlab, limeWoolSlab, pinkWoolSlab, greyWoolSlab, lightGreyWoolSlab, cyanWoolSlab, purpleWoolSlab, blueWoolSlab, brownWoolSlab, greenWoolSlab, redWoolSlab, blackWoolSlab;
-
+	public static CreativeTabs theGamersCoTabDeco;
 @SidedProxy(clientSide = "TheGamersCo.ClientProxy", serverSide = "TheGamersCo.CommonProxy")
 public static CommonProxy proxy; 
 @Instance
@@ -34,14 +36,18 @@ public void load(FMLInitializationEvent evt)
   proxy.registerRenderInformation();
   test = new Item(400).setIconCoord(0, 0).setItemName("test");
   defineWoolSlabs();
-  setCreativeTabsForWoolSlabs();
+  defineNewCreativeTabs();
   registerWoolSlabs();
   addNamesForWoolSlabs();
+  setCreativeTabsForWoolSlabs();
   LanguageRegistry.addName(test, "Test");
   
-  test.setCreativeTab(CreativeTabs.tabDecorations);
+  test.setCreativeTab(theGamersCoTabDeco);
  
   }
+public void defineNewCreativeTabs() {
+	theGamersCoTabDeco = new Tab(CreativeTabs.getNextID(), "deco", 0, whiteWoolSlab.blockID);
+}
 public void defineWoolSlabs() {
 	  whiteWoolSlab = new WoolSlab(3000, false, Material.cloth, 64).setBlockName("WhiteWoolSlab");
 	  orangeWoolSlab = new WoolSlab(3001, false, Material.cloth, 210).setBlockName("OrangeWoolSlab");
@@ -61,22 +67,22 @@ public void defineWoolSlabs() {
 	  blackWoolSlab = new WoolSlab(3015, false, Material.cloth, 113).setBlockName("BlackWoolSlab");
 }
 public void setCreativeTabsForWoolSlabs() {
-	 whiteWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
-	  orangeWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
-	  magnetaWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
-	  lightBlueWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
-	  yellowWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
-	  limeWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
-	  pinkWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
-	  greyWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
-	  lightGreyWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
-	  cyanWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
-	  purpleWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
-	  blueWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
-	  brownWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
-	  greenWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
-	  redWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
-	  blackWoolSlab.setCreativeTab(CreativeTabs.tabDecorations);
+	 whiteWoolSlab.setCreativeTab(theGamersCoTabDeco);
+	  orangeWoolSlab.setCreativeTab(theGamersCoTabDeco);
+	  magnetaWoolSlab.setCreativeTab(theGamersCoTabDeco);
+	  lightBlueWoolSlab.setCreativeTab(theGamersCoTabDeco);
+	  yellowWoolSlab.setCreativeTab(theGamersCoTabDeco);
+	  limeWoolSlab.setCreativeTab(theGamersCoTabDeco);
+	  pinkWoolSlab.setCreativeTab(theGamersCoTabDeco);
+	  greyWoolSlab.setCreativeTab(theGamersCoTabDeco);
+	  lightGreyWoolSlab.setCreativeTab(theGamersCoTabDeco);
+	  cyanWoolSlab.setCreativeTab(theGamersCoTabDeco);
+	  purpleWoolSlab.setCreativeTab(theGamersCoTabDeco);
+	  blueWoolSlab.setCreativeTab(theGamersCoTabDeco);
+	  brownWoolSlab.setCreativeTab(theGamersCoTabDeco);
+	  greenWoolSlab.setCreativeTab(theGamersCoTabDeco);
+	  redWoolSlab.setCreativeTab(theGamersCoTabDeco);
+	  blackWoolSlab.setCreativeTab(theGamersCoTabDeco);
 }
 public void registerWoolSlabs() {
 	  GameRegistry.registerBlock(whiteWoolSlab);
