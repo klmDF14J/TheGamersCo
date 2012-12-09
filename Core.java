@@ -3,6 +3,7 @@ package TheGamersCo;
 import net.minecraft.src.Block;
 import net.minecraft.src.CreativeTabs;
 import net.minecraft.src.Item;
+import net.minecraft.src.ItemStack;
 import net.minecraft.src.Material;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
@@ -24,6 +25,7 @@ public class Core
 	
 	public static Item test;
 	public static Block whiteWoolSlab, orangeWoolSlab, magnetaWoolSlab, lightBlueWoolSlab, yellowWoolSlab, limeWoolSlab, pinkWoolSlab, greyWoolSlab, lightGreyWoolSlab, cyanWoolSlab, purpleWoolSlab, blueWoolSlab, brownWoolSlab, greenWoolSlab, redWoolSlab, blackWoolSlab;
+	public static Block ironBlockSlab, goldBlockSlab, diamondBlockSlab, emeraldBlockSlab;
 	public static CreativeTabs theGamersCoTabDeco;
 @SidedProxy(clientSide = "TheGamersCo.ClientProxy", serverSide = "TheGamersCo.CommonProxy")
 public static CommonProxy proxy; 
@@ -40,6 +42,7 @@ public void load(FMLInitializationEvent evt)
   registerWoolSlabs();
   addNamesForWoolSlabs();
   setCreativeTabsForWoolSlabs();
+  addRecipesForWoolSlabs();
   LanguageRegistry.addName(test, "Test");
   
   test.setCreativeTab(theGamersCoTabDeco);
@@ -65,6 +68,9 @@ public void defineWoolSlabs() {
 	  greenWoolSlab = new WoolSlab(3013, false, Material.cloth, 145).setBlockName("GreenWoolSlab");
 	  redWoolSlab = new WoolSlab(3014, false, Material.cloth, 129).setBlockName("RedWoolSlab");
 	  blackWoolSlab = new WoolSlab(3015, false, Material.cloth, 113).setBlockName("BlackWoolSlab");
+}
+public void defineOreBlockSlabs() {
+	
 }
 public void setCreativeTabsForWoolSlabs() {
 	 whiteWoolSlab.setCreativeTab(theGamersCoTabDeco);
@@ -119,5 +125,23 @@ public void addNamesForWoolSlabs() {
 	LanguageRegistry.addName(greenWoolSlab, "Green Wool Slab");
 	LanguageRegistry.addName(redWoolSlab, "Red Wool Slab");
 	LanguageRegistry.addName(blackWoolSlab, "Black Wool Slab");
+}
+public void addRecipesForWoolSlabs() {
+	GameRegistry.addRecipe(new ItemStack(whiteWoolSlab, 6), new Object[] {"xxx",Character.valueOf('x'), new ItemStack(Block.cloth, 1, 0)});
+	GameRegistry.addRecipe(new ItemStack(orangeWoolSlab, 6), new Object[] {"xxx",Character.valueOf('x'), new ItemStack(Block.cloth, 1, 1)});
+	GameRegistry.addRecipe(new ItemStack(magnetaWoolSlab, 6), new Object[] {"xxx",Character.valueOf('x'), new ItemStack(Block.cloth, 1, 2)});
+	GameRegistry.addRecipe(new ItemStack(lightBlueWoolSlab, 6), new Object[] {"xxx",Character.valueOf('x'), new ItemStack(Block.cloth, 1, 3)});
+	GameRegistry.addRecipe(new ItemStack(yellowWoolSlab, 6), new Object[] {"xxx",Character.valueOf('x'), new ItemStack(Block.cloth, 1, 4)});
+	GameRegistry.addRecipe(new ItemStack(limeWoolSlab, 6), new Object[] {"xxx",Character.valueOf('x'), new ItemStack(Block.cloth, 1, 5)});
+	GameRegistry.addRecipe(new ItemStack(pinkWoolSlab, 6), new Object[] {"xxx",Character.valueOf('x'), new ItemStack(Block.cloth, 1, 6)});
+	GameRegistry.addRecipe(new ItemStack(greyWoolSlab, 6), new Object[] {"xxx",Character.valueOf('x'), new ItemStack(Block.cloth, 1, 7)});
+	GameRegistry.addRecipe(new ItemStack(lightGreyWoolSlab, 6), new Object[] {"xxx",Character.valueOf('x'), new ItemStack(Block.cloth, 1, 8)});
+	GameRegistry.addRecipe(new ItemStack(cyanWoolSlab, 6), new Object[] {"xxx",Character.valueOf('x'), new ItemStack(Block.cloth, 1, 9)});
+	GameRegistry.addRecipe(new ItemStack(purpleWoolSlab, 6), new Object[] {"xxx",Character.valueOf('x'), new ItemStack(Block.cloth, 1, 10)});
+	GameRegistry.addRecipe(new ItemStack(blueWoolSlab, 6), new Object[] {"xxx",Character.valueOf('x'), new ItemStack(Block.cloth, 1, 11)});
+	GameRegistry.addRecipe(new ItemStack(brownWoolSlab, 6), new Object[] {"xxx",Character.valueOf('x'), new ItemStack(Block.cloth, 1, 12)});
+	GameRegistry.addRecipe(new ItemStack(greenWoolSlab, 6), new Object[] {"xxx",Character.valueOf('x'), new ItemStack(Block.cloth, 1, 13)});
+	GameRegistry.addRecipe(new ItemStack(redWoolSlab, 6), new Object[] {"xxx",Character.valueOf('x'), new ItemStack(Block.cloth, 1, 14)});
+	GameRegistry.addRecipe(new ItemStack(blackWoolSlab, 6), new Object[] {"xxx",Character.valueOf('x'), new ItemStack(Block.cloth, 1, 152)});
 }
 }
