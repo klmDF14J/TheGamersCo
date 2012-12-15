@@ -85,14 +85,7 @@ public class OreBlockSlab extends Block
         super.addCollidingBlockToList(par1World, par2, par3, par4, par5AxisAlignedBB, par6List, par7Entity);
     }
 
-    /**
-     * Returns the block texture based on the side being looked at.  Args: side
-     */
-    /*public int getBlockTextureFromSide(int par1)
-    {
-        return this.getBlockTextureFromSideAndMetadata(par1, 0);
-    }
-*/
+    
     /**
      * Is this block (a) opaque and (b) a full 1m cube?  This determines whether or not to render the shared face of two
      * adjacent blocks and also whether the player can attach torches, redstone wire, etc to this block.

@@ -23,7 +23,6 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 public class Core
 {   
 	
-	public static Item test;
 	public static Block whiteWoolSlab, orangeWoolSlab, magnetaWoolSlab, lightBlueWoolSlab, yellowWoolSlab, limeWoolSlab, pinkWoolSlab, greyWoolSlab, lightGreyWoolSlab, cyanWoolSlab, purpleWoolSlab, blueWoolSlab, brownWoolSlab, greenWoolSlab, redWoolSlab, blackWoolSlab;
 	public static Block ironBlockSlab, goldBlockSlab, diamondBlockSlab, emeraldBlockSlab, lapizBlockSlab;
 	public static CreativeTabs theGamersCoTabDeco;
@@ -38,16 +37,12 @@ public static Core instance;
 public void load(FMLInitializationEvent evt)
   {
   proxy.registerRenderInformation();
-  test = new Item(400).setIconCoord(0, 0).setItemName("test");
   defineWoolSlabs();
   defineNewCreativeTabs();
   BlockRegister.registerAllBlocks();
   LanguageRegister.registerAllNames();
-  setCreativeTabsForWoolSlabs();
-  addRecipesForWoolSlabs();
-  LanguageRegistry.addName(test, "Test");
-  
-  test.setCreativeTab(theGamersCoTabDeco);
+  CreativeTabRegister.setAllCreativeTabs();
+  RecipeRegister.addAllRecipes();
  
   }
 public void defineNewCreativeTabs() {
@@ -74,42 +69,8 @@ public void defineWoolSlabs() {
 public void defineOreBlockSlabs() {
 	ironBlockSlab = new OreBlockSlab(2816, false, null, 0);
 }
-public void setCreativeTabsForWoolSlabs() {
-	 whiteWoolSlab.setCreativeTab(theGamersCoTabDeco);
-	  orangeWoolSlab.setCreativeTab(theGamersCoTabDeco);
-	  magnetaWoolSlab.setCreativeTab(theGamersCoTabDeco);
-	  lightBlueWoolSlab.setCreativeTab(theGamersCoTabDeco);
-	  yellowWoolSlab.setCreativeTab(theGamersCoTabDeco);
-	  limeWoolSlab.setCreativeTab(theGamersCoTabDeco);
-	  pinkWoolSlab.setCreativeTab(theGamersCoTabDeco);
-	  greyWoolSlab.setCreativeTab(theGamersCoTabDeco);
-	  lightGreyWoolSlab.setCreativeTab(theGamersCoTabDeco);
-	  cyanWoolSlab.setCreativeTab(theGamersCoTabDeco);
-	  purpleWoolSlab.setCreativeTab(theGamersCoTabDeco);
-	  blueWoolSlab.setCreativeTab(theGamersCoTabDeco);
-	  brownWoolSlab.setCreativeTab(theGamersCoTabDeco);
-	  greenWoolSlab.setCreativeTab(theGamersCoTabDeco);
-	  redWoolSlab.setCreativeTab(theGamersCoTabDeco);
-	  blackWoolSlab.setCreativeTab(theGamersCoTabDeco);
-}
 
 
-public void addRecipesForWoolSlabs() {
-	GameRegistry.addRecipe(new ItemStack(whiteWoolSlab, 6), new Object[] {"xxx",Character.valueOf('x'), new ItemStack(Block.cloth, 1, 0)});
-	GameRegistry.addRecipe(new ItemStack(orangeWoolSlab, 6), new Object[] {"xxx",Character.valueOf('x'), new ItemStack(Block.cloth, 1, 1)});
-	GameRegistry.addRecipe(new ItemStack(magnetaWoolSlab, 6), new Object[] {"xxx",Character.valueOf('x'), new ItemStack(Block.cloth, 1, 2)});
-	GameRegistry.addRecipe(new ItemStack(lightBlueWoolSlab, 6), new Object[] {"xxx",Character.valueOf('x'), new ItemStack(Block.cloth, 1, 3)});
-	GameRegistry.addRecipe(new ItemStack(yellowWoolSlab, 6), new Object[] {"xxx",Character.valueOf('x'), new ItemStack(Block.cloth, 1, 4)});
-	GameRegistry.addRecipe(new ItemStack(limeWoolSlab, 6), new Object[] {"xxx",Character.valueOf('x'), new ItemStack(Block.cloth, 1, 5)});
-	GameRegistry.addRecipe(new ItemStack(pinkWoolSlab, 6), new Object[] {"xxx",Character.valueOf('x'), new ItemStack(Block.cloth, 1, 6)});
-	GameRegistry.addRecipe(new ItemStack(greyWoolSlab, 6), new Object[] {"xxx",Character.valueOf('x'), new ItemStack(Block.cloth, 1, 7)});
-	GameRegistry.addRecipe(new ItemStack(lightGreyWoolSlab, 6), new Object[] {"xxx",Character.valueOf('x'), new ItemStack(Block.cloth, 1, 8)});
-	GameRegistry.addRecipe(new ItemStack(cyanWoolSlab, 6), new Object[] {"xxx",Character.valueOf('x'), new ItemStack(Block.cloth, 1, 9)});
-	GameRegistry.addRecipe(new ItemStack(purpleWoolSlab, 6), new Object[] {"xxx",Character.valueOf('x'), new ItemStack(Block.cloth, 1, 10)});
-	GameRegistry.addRecipe(new ItemStack(blueWoolSlab, 6), new Object[] {"xxx",Character.valueOf('x'), new ItemStack(Block.cloth, 1, 11)});
-	GameRegistry.addRecipe(new ItemStack(brownWoolSlab, 6), new Object[] {"xxx",Character.valueOf('x'), new ItemStack(Block.cloth, 1, 12)});
-	GameRegistry.addRecipe(new ItemStack(greenWoolSlab, 6), new Object[] {"xxx",Character.valueOf('x'), new ItemStack(Block.cloth, 1, 13)});
-	GameRegistry.addRecipe(new ItemStack(redWoolSlab, 6), new Object[] {"xxx",Character.valueOf('x'), new ItemStack(Block.cloth, 1, 14)});
-	GameRegistry.addRecipe(new ItemStack(blackWoolSlab, 6), new Object[] {"xxx",Character.valueOf('x'), new ItemStack(Block.cloth, 1, 152)});
-}
+
+
 }
