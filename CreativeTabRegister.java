@@ -19,7 +19,23 @@ public class CreativeTabRegister {
 		 Core.redWoolSlab.setCreativeTab(Core.theGamersCoTabDeco);
 		 Core.blackWoolSlab.setCreativeTab(Core.theGamersCoTabDeco);
 	}
+	public static void setCreativeTabsForOreBlockSlabs() {
+		Core.ironBlockSlab.setCreativeTab(Core.theGamersCoTabDeco);
+		Core.goldBlockSlab.setCreativeTab(Core.theGamersCoTabDeco);
+		Core.diamondBlockSlab.setCreativeTab(Core.theGamersCoTabDeco);
+		Core.emeraldBlockSlab.setCreativeTab(Core.theGamersCoTabDeco);
+		Core.lapizBlockSlab.setCreativeTab(Core.theGamersCoTabDeco);
+	}
+	public static void setCreativeTabsForGeneralBlocks() {
+		Core.invisBlock.setCreativeTab(Core.theGamersCoTabDeco);
+	}
+	public static void setCreativeTabsForGeneralItems() {
+		Core.invisBlockItem.setCreativeTab(Core.theGamersCoTabDeco);
+	}
 	public static void setAllCreativeTabs() {
+		setCreativeTabsForOreBlockSlabs();
 		setCreativeTabsForWoolSlabs();
+		setCreativeTabsForGeneralBlocks();
+		setCreativeTabsForGeneralItems();
 	}
 }

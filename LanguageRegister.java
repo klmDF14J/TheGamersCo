@@ -21,7 +21,23 @@ public class LanguageRegister {
 		LanguageRegistry.addName(Core.redWoolSlab, "Red Wool Slab");
 		LanguageRegistry.addName(Core.blackWoolSlab, "Black Wool Slab");
 	}
+	public static void registerOreBlockSlabNames() {
+		LanguageRegistry.addName(Core.ironBlockSlab, "Iron Block Slab");
+		LanguageRegistry.addName(Core.goldBlockSlab, "Gold Block Slab");
+		LanguageRegistry.addName(Core.diamondBlockSlab, "Diamond Block Slab");
+		LanguageRegistry.addName(Core.emeraldBlockSlab, "Emerald Block Slab");
+		LanguageRegistry.addName(Core.lapizBlockSlab, "Lapis Block Slab");
+	}
+	public static void registerGeneralBlockNames() {
+		LanguageRegistry.addName(Core.invisBlock, "Invisible Block [Block Form]");
+	}
+	public static void registerGeneralItemNames() {
+		LanguageRegistry.addName(Core.invisBlockItem, "Invisible Block");
+	}
 	public static void registerAllNames() {
 		registerWoolSlabNames();
+		registerOreBlockSlabNames();
+		registerGeneralBlockNames();
+		registerGeneralItemNames();
 	}
 }

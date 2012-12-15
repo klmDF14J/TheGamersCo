@@ -21,7 +21,19 @@ public class BlockRegister {
 		  GameRegistry.registerBlock(Core.redWoolSlab);
 		  GameRegistry.registerBlock(Core.blackWoolSlab);
 	}
+	public static void registerOreBlockSlabs() {
+		GameRegistry.registerBlock(Core.ironBlockSlab);
+		GameRegistry.registerBlock(Core.goldBlockSlab);
+		GameRegistry.registerBlock(Core.diamondBlockSlab);
+		GameRegistry.registerBlock(Core.emeraldBlockSlab);
+		GameRegistry.registerBlock(Core.lapizBlockSlab);
+	}
+	public static void registerGeneralBlocks() {
+		GameRegistry.registerBlock(Core.invisBlock);
+	}
 	public static void registerAllBlocks() {
 		registerWoolSlabs();
+		registerOreBlockSlabs();
+		registerGeneralBlocks();
 	}
 }
