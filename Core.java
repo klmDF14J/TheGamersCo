@@ -113,7 +113,7 @@ public void defineOreBlockSlabs() {
 }
 public void defineGeneralThings() {
 	invisBlockItem = new ItemInvisBlock(invisBlockItemID).setItemName("ItemInvisBlock");
-	invisBlock = new InvisBlock(invisBlockID, 0, Material.rock, "/TheGamersCo/Block.png", false).setBlockName("InvisBlock");
+	invisBlock = new InvisBlock(invisBlockID, 0, Material.glass, "/TheGamersCoImages/Block.png", false).setBlockName("InvisBlock");
 }
 
 

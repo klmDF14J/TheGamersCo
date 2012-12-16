@@ -1,5 +1,7 @@
 package TheGamersCo;
 
+import java.util.Random;
+
 import net.minecraft.src.Block;
 import net.minecraft.src.Material;
 
@@ -11,6 +13,8 @@ public class InvisBlock extends Block {
 		textureFile = texFile;
 		blockIsNormal = normalBlock;
 		setLightOpacity(0);
+		setHardness(1F);
+		setResistance(3F);
 	}
 	public String getTextureFile() {
 		return textureFile;
@@ -27,7 +31,9 @@ public class InvisBlock extends Block {
     {
         return blockIsNormal;
     }
-	
+	public int idDropped(int par1, Random par2, int par3) {
+		return Core.invisBlockItem.shiftedIndex;
+	}
 	
 
 }

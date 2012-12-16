@@ -27,7 +27,7 @@ public class CreativeTabRegister {
 		Core.lapizBlockSlab.setCreativeTab(Core.theGamersCoTabDeco);
 	}
 	public static void setCreativeTabsForGeneralBlocks() {
-		Core.invisBlock.setCreativeTab(Core.theGamersCoTabDeco);
+		
 	}
 	public static void setCreativeTabsForGeneralItems() {
 		Core.invisBlockItem.setCreativeTab(Core.theGamersCoTabDeco);

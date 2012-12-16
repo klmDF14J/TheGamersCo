@@ -13,7 +13,7 @@ public class ItemInvisBlock extends Item
     {
         super(par1);
         this.maxStackSize = 64;
-        this.setMaxDamage(0);
+        this.setMaxDamage(1);
     }
 
     /**
@@ -62,15 +62,14 @@ public class ItemInvisBlock extends Item
 
             if (var11 == 0)
             {
-                par3World.playSoundEffect((double)par4 + 0.5D, (double)par5 + 0.5D, (double)par6 + 0.5D, "fire.ignite", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
                 par3World.setBlockWithNotify(par4, par5, par6, Core.invisBlock.blockID);
             }
 
-            par1ItemStack.damageItem(1, par2EntityPlayer);
+            par1ItemStack.damageItem(2, par2EntityPlayer);
             return true;
         }
     }
     public String getTextureFile() {
-    	return "/TheGamersCo/Items.png";
+    	return "/TheGamersCoImages/Items.png";
     }
 }
