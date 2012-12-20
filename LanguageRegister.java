@@ -33,6 +33,7 @@ public class LanguageRegister {
 	}
 	public static void registerGeneralItemNames() {
 		LanguageRegistry.addName(Core.invisBlockItem, "Invisible Block");
+		LanguageRegistry.addName(Core.gamersCoLogo, "The Gamers Co Manual");
 	}
 	public static void registerAllNames() {
 		registerWoolSlabNames();

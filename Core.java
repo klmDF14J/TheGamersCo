@@ -1,10 +1,9 @@
 package TheGamersCo;
 
-import net.minecraft.src.Block;
-import net.minecraft.src.CreativeTabs;
-import net.minecraft.src.Item;
-import net.minecraft.src.ItemStack;
-import net.minecraft.src.Material;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraftforge.common.Configuration;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
@@ -29,11 +28,11 @@ public class Core
 	public static Block whiteWoolSlab, orangeWoolSlab, magnetaWoolSlab, lightBlueWoolSlab, yellowWoolSlab, limeWoolSlab, pinkWoolSlab, greyWoolSlab, lightGreyWoolSlab, cyanWoolSlab, purpleWoolSlab, blueWoolSlab, brownWoolSlab, greenWoolSlab, redWoolSlab, blackWoolSlab;
 	public static Block ironBlockSlab, goldBlockSlab, diamondBlockSlab, emeraldBlockSlab, lapizBlockSlab;
 	public static Block invisBlock;
-	public static Item invisBlockItem;
+	public static Item invisBlockItem, gamersCoLogo;
 	public static CreativeTabs theGamersCoTabDeco;
 	public static int whiteWoolSlabID, orangeWoolSlabID, magnetaWoolSlabID, lightBlueWoolSlabID, yellowWoolSlabID, limeWoolSlabID, pinkWoolSlabID, greyWoolSlabID, lightGreyWoolSlabID, cyanWoolSlabID, purpleWoolSlabID, blueWoolSlabID, brownWoolSlabID, greenWoolSlabID, redWoolSlabID, blackWoolSlabID;
 	public static int ironBlockSlabID, goldBlockSlabID, diamondBlockSlabID, emeraldBlockSlabID, lapizBlockSlabID; 
-	public static int invisBlockID, invisBlockItemID;
+	public static int invisBlockID, invisBlockItemID, gamersCoLogoID;
 @SidedProxy(clientSide = "TheGamersCo.ClientProxy", serverSide = "TheGamersCo.CommonProxy")
 public static CommonProxy proxy; 
 @Instance
@@ -66,7 +65,8 @@ public void preInit(FMLPreInitializationEvent event) {
 	lapizBlockSlabID = config.getBlock("Lapiz Block Slab", 2820).getInt();
 	
 	invisBlockID = config.getBlock("Invisible Block", 2821).getInt();
-	invisBlockItemID = config.getBlock("Invisible Block Item", 3000).getInt();
+	invisBlockItemID = config.getItem("Invisible Block Item", 3000).getInt();
+	gamersCoLogoID = config.getItem("Gamers Co Manual", 3001).getInt();
 	config.save();
 	System.out.println("[TheGamersCo] Successfully loaded Config File For The Gamers Co Mod");
 }
@@ -113,6 +113,7 @@ public void defineOreBlockSlabs() {
 }
 public void defineGeneralThings() {
 	invisBlockItem = new ItemInvisBlock(invisBlockItemID).setItemName("ItemInvisBlock");
+	gamersCoLogo = new StandardItem(gamersCoLogoID, 0, "/TheGamersCoImages/HDBlocks.png").setItemName("GamersCoLogo");
 	invisBlock = new InvisBlock(invisBlockID, 0, Material.glass, "/TheGamersCoImages/Block.png", false).setBlockName("InvisBlock");
 }
 

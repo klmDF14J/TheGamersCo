@@ -1,9 +1,8 @@
 package TheGamersCo;
 
-import cpw.mods.fml.common.Side;
-import cpw.mods.fml.common.asm.SideOnly;
-import net.minecraft.src.Block;
-import net.minecraft.src.CreativeTabs;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.creativetab.CreativeTabs;
 
 
 public final class Tab extends CreativeTabs

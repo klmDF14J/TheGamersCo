@@ -30,6 +30,7 @@ public class CreativeTabRegister {
 		
 	}
 	public static void setCreativeTabsForGeneralItems() {
+		Core.gamersCoLogo.setCreativeTab(Core.theGamersCoTabDeco);
 		Core.invisBlockItem.setCreativeTab(Core.theGamersCoTabDeco);
 	}
 	public static void setAllCreativeTabs() {
