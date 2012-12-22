@@ -3,6 +3,7 @@ package TheGamersCo;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.src.ModLoader;
 import net.minecraft.world.World;
 
 public class ItemInvisBlock extends Item
@@ -12,6 +13,7 @@ public class ItemInvisBlock extends Item
         super(par1);
         this.maxStackSize = 64;
         this.setMaxDamage(1);
+        this.setIconIndex(1);
     }
 
     /**
@@ -61,6 +63,7 @@ public class ItemInvisBlock extends Item
             if (var11 == 0)
             {
                 par3World.setBlockWithNotify(par4, par5, par6, Core.invisBlock.blockID);
+                System.out.println("Invisible Block Placed At: " + "X: " + par4 + " Y: " + par5 + " Z: " + par6);
             }
 
             par1ItemStack.damageItem(2, par2EntityPlayer);
@@ -68,6 +71,6 @@ public class ItemInvisBlock extends Item
         }
     }
     public String getTextureFile() {
-    	return "/TheGamersCoImages/Items.png";
+    	return "/TheGamersCoImages/HDTextures.png";
     }
 }

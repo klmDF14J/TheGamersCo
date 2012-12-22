@@ -9,7 +9,7 @@ public final class Tab extends CreativeTabs
 {
 		int TabID;
 		int TabIconID;
-		String[] tabNames = {"The Gamers Co Decoration"};
+		String[] tabNames = {"The Gamers Co"};
         public Tab(int par1, String par2Str, int tabID, int tabIconID)
         {
                 super(par1, par2Str);

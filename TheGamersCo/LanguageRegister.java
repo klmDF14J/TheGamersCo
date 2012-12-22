@@ -31,13 +31,23 @@ public class LanguageRegister {
 	public static void registerGeneralBlockNames() {
 		LanguageRegistry.addName(Core.invisBlock, "Invisible Block [Block Form]");
 	}
+	public static void registerMiscSlabNames() {
+		LanguageRegistry.addName(Core.glowstoneSlab, "Glowstone Slab");
+		LanguageRegistry.addName(Core.obsidianSlab, "Obsidian Slab");
+		LanguageRegistry.addName(Core.netherrackSlab, "Netherrack Slab");
+		LanguageRegistry.addName(Core.snowSlab, "Snow Slab");
+		LanguageRegistry.addName(Core.mossyCobbleSlab, "Mossy Cobblestone Slab");
+		LanguageRegistry.addName(Core.soulSandSlab, "Soulsand Slab");
+		LanguageRegistry.addName(Core.claySlab, "Clay Slab");
+	}
 	public static void registerGeneralItemNames() {
 		LanguageRegistry.addName(Core.invisBlockItem, "Invisible Block");
-		LanguageRegistry.addName(Core.gamersCoLogo, "The Gamers Co Manual");
+		LanguageRegistry.addName(Core.GamersCoLogo, "The Gamers Co Information Panel");
 	}
 	public static void registerAllNames() {
 		registerWoolSlabNames();
 		registerOreBlockSlabNames();
+		registerMiscSlabNames();
 		registerGeneralBlockNames();
 		registerGeneralItemNames();
 	}

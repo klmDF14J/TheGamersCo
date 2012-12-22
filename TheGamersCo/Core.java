@@ -4,6 +4,9 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.stats.Achievement;
+import net.minecraft.stats.AchievementList;
+import net.minecraftforge.common.AchievementPage;
 import net.minecraftforge.common.Configuration;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
@@ -13,6 +16,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
@@ -27,12 +31,22 @@ public class Core
 	
 	public static Block whiteWoolSlab, orangeWoolSlab, magnetaWoolSlab, lightBlueWoolSlab, yellowWoolSlab, limeWoolSlab, pinkWoolSlab, greyWoolSlab, lightGreyWoolSlab, cyanWoolSlab, purpleWoolSlab, blueWoolSlab, brownWoolSlab, greenWoolSlab, redWoolSlab, blackWoolSlab;
 	public static Block ironBlockSlab, goldBlockSlab, diamondBlockSlab, emeraldBlockSlab, lapizBlockSlab;
-	public static Block invisBlock;
-	public static Item invisBlockItem, gamersCoLogo;
-	public static CreativeTabs theGamersCoTabDeco;
+	public static Block glowstoneSlab, obsidianSlab, netherrackSlab, snowSlab, mossyCobbleSlab, soulSandSlab, claySlab;
+	public static Block invisBlock, GamersCoLogo;
+	
+	public static Item invisBlockItem;
+	public static CreativeTabs theGamersCoTab;
+	
 	public static int whiteWoolSlabID, orangeWoolSlabID, magnetaWoolSlabID, lightBlueWoolSlabID, yellowWoolSlabID, limeWoolSlabID, pinkWoolSlabID, greyWoolSlabID, lightGreyWoolSlabID, cyanWoolSlabID, purpleWoolSlabID, blueWoolSlabID, brownWoolSlabID, greenWoolSlabID, redWoolSlabID, blackWoolSlabID;
 	public static int ironBlockSlabID, goldBlockSlabID, diamondBlockSlabID, emeraldBlockSlabID, lapizBlockSlabID; 
+	public static int glowstoneSlabID, obsidianSlabID, netherrackSlabID, snowSlabID, mossyCobbleSlabID, soulSandSlabID, claySlabID;
+	
 	public static int invisBlockID, invisBlockItemID, gamersCoLogoID;
+	
+	public static GUIHandler guiHandler = new GUIHandler();
+	
+	//public static final Achievement invisAchievement = new Achievement(2001, "Shhh Don't Tell Anyone!", 1, -2, invisBlockItem, AchievementList.buildWorkBench);
+	public static AchievementPage theGamersCoPage = new AchievementPage("The Gamers Co");
 @SidedProxy(clientSide = "TheGamersCo.ClientProxy", serverSide = "TheGamersCo.CommonProxy")
 public static CommonProxy proxy; 
 @Instance
@@ -64,17 +78,29 @@ public void preInit(FMLPreInitializationEvent event) {
 	emeraldBlockSlabID = config.getBlock("Emerald Block Slab", 2819).getInt();
 	lapizBlockSlabID = config.getBlock("Lapiz Block Slab", 2820).getInt();
 	
+	glowstoneSlabID = config.getBlock("Glowstone Slab", 2823).getInt();
+	obsidianSlabID = config.getBlock("Obsidian Slab", 2824).getInt();
+	netherrackSlabID = config.getBlock("Netherrack Slab", 2825).getInt();
+	snowSlabID = config.getBlock("Snow Slab", 2826).getInt();
+	mossyCobbleSlabID = config.getBlock("Mossy Cobblestone Slab", 2827).getInt();
+	soulSandSlabID = config.getBlock("Soulsand Slab", 2828).getInt();
+	claySlabID = config.getBlock("Clay Slab", 2829).getInt();
+	
 	invisBlockID = config.getBlock("Invisible Block", 2821).getInt();
 	invisBlockItemID = config.getItem("Invisible Block Item", 3000).getInt();
-	gamersCoLogoID = config.getItem("Gamers Co Manual", 3001).getInt();
+	gamersCoLogoID = config.getBlock("Gamers Co Manual", 2822).getInt();
 	config.save();
 	System.out.println("[TheGamersCo] Successfully loaded Config File For The Gamers Co Mod");
 }
 @Init
 public void load(FMLInitializationEvent evt) {
+  AchievementPage.registerAchievementPage(theGamersCoPage);
+  NetworkRegistry.instance().registerGuiHandler(this, guiHandler);
+  instance = this;
   proxy.registerRenderInformation();
   defineWoolSlabs();
   defineOreBlockSlabs();
+  defineMiscSlabs();
   defineNewCreativeTabs();
   defineGeneralThings();
   BlockRegister.registerAllBlocks();
@@ -84,7 +110,7 @@ public void load(FMLInitializationEvent evt) {
  
   }
 public void defineNewCreativeTabs() {
-	theGamersCoTabDeco = new Tab(CreativeTabs.getNextID(), "deco", 0, whiteWoolSlab.blockID);
+	theGamersCoTab = new Tab(CreativeTabs.getNextID(), "deco", 0, whiteWoolSlab.blockID);
 }
 public void defineWoolSlabs() {
 	  whiteWoolSlab = new WoolSlab(whiteWoolSlabID, false, Material.cloth, 64).setBlockName("WhiteWoolSlab");
@@ -111,9 +137,18 @@ public void defineOreBlockSlabs() {
 	emeraldBlockSlab = new OreBlockSlab(emeraldBlockSlabID, false, Material.rock, 25).setBlockName("EmeraldBlockSlab");
 	lapizBlockSlab = new OreBlockSlab(lapizBlockSlabID, false, Material.rock, 144).setBlockName("LapizBlockSlab");
 }
+public void defineMiscSlabs() {
+	glowstoneSlab = new StandardSlab(glowstoneSlabID, false, Material.rock, 105, true).setBlockName("glowstoneSlab");
+	obsidianSlab = new StandardSlab(obsidianSlabID, false, Material.rock, 37, false).setBlockName("obsidianSlab");
+	netherrackSlab = new StandardSlab(netherrackSlabID, false, Material.rock, 103, false).setBlockName("netherrackSlab");
+	snowSlab = new StandardSlab(snowSlabID, false, Material.snow, 66, false).setBlockName("snowSlab");
+	mossyCobbleSlab = new StandardSlab(mossyCobbleSlabID, false, Material.rock, 36, false).setBlockName("mossyCobbleSlab");
+	soulSandSlab = new StandardSlab(soulSandSlabID, false, Material.grass, 104, false).setBlockName("soulSandSlab");
+	claySlab = new StandardSlab(claySlabID, false, Material.clay, 72, false).setBlockName("claySlab");
+}
 public void defineGeneralThings() {
 	invisBlockItem = new ItemInvisBlock(invisBlockItemID).setItemName("ItemInvisBlock");
-	gamersCoLogo = new StandardItem(gamersCoLogoID, 0, "/TheGamersCoImages/HDBlocks.png").setItemName("GamersCoLogo");
+	GamersCoLogo = new GamersCoLogoBlock(gamersCoLogoID, 0, Material.rock).setBlockName("GamersCoLogo");
 	invisBlock = new InvisBlock(invisBlockID, 0, Material.glass, "/TheGamersCoImages/Block.png", false).setBlockName("InvisBlock");
 }
 

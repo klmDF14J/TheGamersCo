@@ -28,12 +28,23 @@ public class BlockRegister {
 		GameRegistry.registerBlock(Core.emeraldBlockSlab,"emeraldBlockSlab");
 		GameRegistry.registerBlock(Core.lapizBlockSlab,"lapizBlockSlab");
 	}
+	public static void registerMiscSlabs() {
+		GameRegistry.registerBlock(Core.glowstoneSlab, "glowstoneSlab");
+		GameRegistry.registerBlock(Core.obsidianSlab, "obsidianSlab");
+		GameRegistry.registerBlock(Core.netherrackSlab, "netherrackSlab");
+		GameRegistry.registerBlock(Core.snowSlab, "snowSlab");
+		GameRegistry.registerBlock(Core.mossyCobbleSlab, "mossyCobbleSlab");
+		GameRegistry.registerBlock(Core.soulSandSlab, "soulSandSlab");
+		GameRegistry.registerBlock(Core.claySlab, "claySlab");
+	}
 	public static void registerGeneralBlocks() {
 		GameRegistry.registerBlock(Core.invisBlock,"invisBlock");
+		GameRegistry.registerBlock(Core.GamersCoLogo,"gamersCoLogo");
 	}
 	public static void registerAllBlocks() {
 		registerWoolSlabs();
 		registerOreBlockSlabs();
+		registerMiscSlabs();
 		registerGeneralBlocks();
 	}
 }

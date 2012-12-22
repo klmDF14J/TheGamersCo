@@ -31,12 +31,22 @@ public class RecipeRegister {
 		GameRegistry.addRecipe(new ItemStack(Core.emeraldBlockSlab, 6), new Object[] {"xxx",Character.valueOf('x'), Block.blockEmerald});
 		GameRegistry.addRecipe(new ItemStack(Core.lapizBlockSlab, 6), new Object[] {"xxx",Character.valueOf('x'), Block.blockLapis});
 	}
+	public static void addRecipesForMiscSlabs() {
+		GameRegistry.addRecipe(new ItemStack(Core.glowstoneSlab, 6), new Object[] {"xxx",Character.valueOf('x'), Block.glowStone});
+		GameRegistry.addRecipe(new ItemStack(Core.obsidianSlab, 6), new Object[] {"xxx",Character.valueOf('x'), Block.obsidian});
+		GameRegistry.addRecipe(new ItemStack(Core.netherrackSlab, 6), new Object[] {"xxx",Character.valueOf('x'), Block.netherrack});
+		GameRegistry.addRecipe(new ItemStack(Core.snowSlab, 6), new Object[] {"xxx",Character.valueOf('x'), Block.blockSnow});
+		GameRegistry.addRecipe(new ItemStack(Core.mossyCobbleSlab, 6), new Object[] {"xxx",Character.valueOf('x'), Block.cobblestoneMossy});
+		GameRegistry.addRecipe(new ItemStack(Core.soulSandSlab, 6), new Object[] {"xxx",Character.valueOf('x'), Block.slowSand});
+		GameRegistry.addRecipe(new ItemStack(Core.claySlab, 6), new Object[] {"xxx",Character.valueOf('x'), Block.blockClay});
+	}
 	public static void addGeneralRecipes() {
 		GameRegistry.addRecipe(new ItemStack(Core.invisBlockItem, 4), new Object[] {"x","y",Character.valueOf('x'), new ItemStack(Item.dyePowder,1,4), Character.valueOf('y'), Block.glass});
 	}
 	public static void addAllRecipes() {
 		addRecipesForWoolSlabs();
 		addRecipesForOreBlockSlabs();
+		addRecipesForMiscSlabs();
 		addGeneralRecipes();
 	}
 }
