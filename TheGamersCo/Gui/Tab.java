@@ -1,4 +1,4 @@
-package TheGamersCo;
+package TheGamersCo.Gui;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

@@ -1,4 +1,4 @@
-package TheGamersCo;
+package TheGamersCo.Block;
 
 import java.util.List;
 import java.util.Random;
@@ -14,11 +14,11 @@ import net.minecraft.util.Facing;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class StandardSlab extends Block
+public class OreBlockSlab extends Block
 {
     private final boolean isDoubleSlab;
 
-    public StandardSlab(int par1, boolean par2, Material par3Material, int par3, boolean blockGlows)
+    public OreBlockSlab(int par1, boolean par2, Material par3Material, int par3)
     {
         super(par1, par3, par3Material);
         this.isDoubleSlab = par2;
@@ -31,12 +31,10 @@ public class StandardSlab extends Block
         {
             this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.5F, 1.0F);
         }
-        if(blockGlows) {
-        	this.setLightValue(1.0F);
-        }
+
         this.setLightOpacity(0);
-        this.setHardness(1F);
-        this.setResistance(3F);
+        this.setHardness(5F);
+        this.setResistance(10F);
     }
     
 
@@ -88,6 +86,7 @@ public class StandardSlab extends Block
         super.addCollidingBlockToList(par1World, par2, par3, par4, par5AxisAlignedBB, par6List, par7Entity);
     }
 
+    
     /**
      * Is this block (a) opaque and (b) a full 1m cube?  This determines whether or not to render the shared face of two
      * adjacent blocks and also whether the player can attach torches, redstone wire, etc to this block.

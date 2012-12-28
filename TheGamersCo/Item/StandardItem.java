@@ -1,4 +1,4 @@
-package TheGamersCo;
+package TheGamersCo.Item;
 
 import net.minecraft.item.Item;
 

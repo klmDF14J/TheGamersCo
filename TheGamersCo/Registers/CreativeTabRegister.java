@@ -1,4 +1,6 @@
-package TheGamersCo;
+package TheGamersCo.Registers;
+
+import TheGamersCo.Core.Core;
 
 public class CreativeTabRegister {
 	public static void setCreativeTabsForWoolSlabs() {

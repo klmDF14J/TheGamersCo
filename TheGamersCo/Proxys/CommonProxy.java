@@ -1,5 +1,6 @@
-package TheGamersCo;
+package TheGamersCo.Proxys;
 
+import TheGamersCo.Gui.GamersCoLogoGui;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;

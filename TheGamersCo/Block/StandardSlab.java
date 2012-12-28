@@ -1,7 +1,9 @@
-package TheGamersCo;
+package TheGamersCo.Block;
 
 import java.util.List;
 import java.util.Random;
+
+import TheGamersCo.Core.Core;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -14,11 +16,12 @@ import net.minecraft.util.Facing;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class OreBlockSlab extends Block
+public class StandardSlab extends Block
 {
     private final boolean isDoubleSlab;
-
-    public OreBlockSlab(int par1, boolean par2, Material par3Material, int par3)
+    public static boolean isSoulSand;
+    public static boolean isBouncy;
+    public StandardSlab(int par1, boolean par2, Material par3Material, int par3, boolean doesBlockGlow, boolean isBlockSoulSand, boolean isBlockBouncy)
     {
         super(par1, par3, par3Material);
         this.isDoubleSlab = par2;
@@ -31,10 +34,28 @@ public class OreBlockSlab extends Block
         {
             this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.5F, 1.0F);
         }
-
+        if(doesBlockGlow) {
+        	this.setLightValue(1.0F);
+        }
+        isSoulSand = isBlockSoulSand;
+        isBouncy = isBlockBouncy;
         this.setLightOpacity(0);
-        this.setHardness(5F);
-        this.setResistance(10F);
+        this.setHardness(1F);
+        this.setResistance(3F);
+        }
+    public void onEntityWalking(World world, int par2, int par3, int par4, Entity entity) {
+    	if(isBouncy) {
+    		entity.motionY += 2.0;
+    		entity.fallDistance = 0;
+    		entity.addVelocity(0, 1, 0); 
+    	}
+    	
+    }
+    public void onEntityCollidedWithBlock(World par1World, int par2, int par3, int par4, Entity par5Entity) {
+    	if(this.blockID == Core.soulSandSlabID) {
+        par5Entity.motionX *= 0.4D;
+        par5Entity.motionZ *= 0.4D;
+    	}
     }
     
 
@@ -86,7 +107,6 @@ public class OreBlockSlab extends Block
         super.addCollidingBlockToList(par1World, par2, par3, par4, par5AxisAlignedBB, par6List, par7Entity);
     }
 
-    
     /**
      * Is this block (a) opaque and (b) a full 1m cube?  This determines whether or not to render the shared face of two
      * adjacent blocks and also whether the player can attach torches, redstone wire, etc to this block.

@@ -1,5 +1,6 @@
-package TheGamersCo;
+package TheGamersCo.Registers;
 
+import TheGamersCo.Core.Core;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class LanguageRegister {

@@ -1,4 +1,4 @@
-package TheGamersCo;
+package TheGamersCo.Proxys;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;

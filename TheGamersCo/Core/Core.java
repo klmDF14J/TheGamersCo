@@ -1,5 +1,18 @@
-package TheGamersCo;
+package TheGamersCo.Core;
 
+import TheGamersCo.Block.GamersCoLogoBlock;
+import TheGamersCo.Block.InvisBlock;
+import TheGamersCo.Block.OreBlockSlab;
+import TheGamersCo.Block.StandardSlab;
+import TheGamersCo.Block.WoolSlab;
+import TheGamersCo.Gui.Tab;
+import TheGamersCo.Handlers.GUIHandler;
+import TheGamersCo.Item.ItemInvisBlock;
+import TheGamersCo.Proxys.CommonProxy;
+import TheGamersCo.Registers.BlockRegister;
+import TheGamersCo.Registers.CreativeTabRegister;
+import TheGamersCo.Registers.LanguageRegister;
+import TheGamersCo.Registers.RecipeRegister;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -23,13 +36,14 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 
 
-@Mod( modid = "TheGamersCo", name="The Gamers Co Mod", version="0.1")
+@Mod( modid = "TheGamersCo", name="The Gamers Co Mod", version = "0.9")
 @NetworkMod(clientSideRequired = true,serverSideRequired = false)
 
 public class Core
 {   
 	
 	public static Block whiteWoolSlab, orangeWoolSlab, magnetaWoolSlab, lightBlueWoolSlab, yellowWoolSlab, limeWoolSlab, pinkWoolSlab, greyWoolSlab, lightGreyWoolSlab, cyanWoolSlab, purpleWoolSlab, blueWoolSlab, brownWoolSlab, greenWoolSlab, redWoolSlab, blackWoolSlab;
+	public static Block whiteWoolDoubleSlab;
 	public static Block ironBlockSlab, goldBlockSlab, diamondBlockSlab, emeraldBlockSlab, lapizBlockSlab;
 	public static Block glowstoneSlab, obsidianSlab, netherrackSlab, snowSlab, mossyCobbleSlab, soulSandSlab, claySlab;
 	public static Block invisBlock, GamersCoLogo;
@@ -47,7 +61,7 @@ public class Core
 	
 	//public static final Achievement invisAchievement = new Achievement(2001, "Shhh Don't Tell Anyone!", 1, -2, invisBlockItem, AchievementList.buildWorkBench);
 	public static AchievementPage theGamersCoPage = new AchievementPage("The Gamers Co");
-@SidedProxy(clientSide = "TheGamersCo.ClientProxy", serverSide = "TheGamersCo.CommonProxy")
+@SidedProxy(clientSide = "TheGamersCo.Proxys.ClientProxy", serverSide = "TheGamersCo.Proxys.CommonProxy")
 public static CommonProxy proxy; 
 @Instance
 public static Core instance; 
@@ -113,6 +127,7 @@ public void defineNewCreativeTabs() {
 	theGamersCoTab = new Tab(CreativeTabs.getNextID(), "deco", 0, whiteWoolSlab.blockID);
 }
 public void defineWoolSlabs() {
+	whiteWoolDoubleSlab = new WoolSlab(2799, true, Material.cloth, 64).setBlockName("WhiteWoolSlab");
 	  whiteWoolSlab = new WoolSlab(whiteWoolSlabID, false, Material.cloth, 64).setBlockName("WhiteWoolSlab");
 	  orangeWoolSlab = new WoolSlab(orangeWoolSlabID, false, Material.cloth, 210).setBlockName("OrangeWoolSlab");
 	  magnetaWoolSlab = new WoolSlab(magnetaWoolSlabID, false, Material.cloth, 194).setBlockName("MagnetaWoolSlab");
@@ -138,13 +153,13 @@ public void defineOreBlockSlabs() {
 	lapizBlockSlab = new OreBlockSlab(lapizBlockSlabID, false, Material.rock, 144).setBlockName("LapizBlockSlab");
 }
 public void defineMiscSlabs() {
-	glowstoneSlab = new StandardSlab(glowstoneSlabID, false, Material.rock, 105, true).setBlockName("glowstoneSlab");
-	obsidianSlab = new StandardSlab(obsidianSlabID, false, Material.rock, 37, false).setBlockName("obsidianSlab");
-	netherrackSlab = new StandardSlab(netherrackSlabID, false, Material.rock, 103, false).setBlockName("netherrackSlab");
-	snowSlab = new StandardSlab(snowSlabID, false, Material.snow, 66, false).setBlockName("snowSlab");
-	mossyCobbleSlab = new StandardSlab(mossyCobbleSlabID, false, Material.rock, 36, false).setBlockName("mossyCobbleSlab");
-	soulSandSlab = new StandardSlab(soulSandSlabID, false, Material.grass, 104, false).setBlockName("soulSandSlab");
-	claySlab = new StandardSlab(claySlabID, false, Material.clay, 72, false).setBlockName("claySlab");
+	glowstoneSlab = new StandardSlab(glowstoneSlabID, false, Material.rock, 105, true, false, false).setBlockName("glowstoneSlab");
+	obsidianSlab = new StandardSlab(obsidianSlabID, false, Material.rock, 37, false, false, false).setBlockName("obsidianSlab");
+	netherrackSlab = new StandardSlab(netherrackSlabID, false, Material.rock, 103, false, false, false).setBlockName("netherrackSlab");
+	snowSlab = new StandardSlab(snowSlabID, false, Material.snow, 66, false, false, false).setBlockName("snowSlab");
+	mossyCobbleSlab = new StandardSlab(mossyCobbleSlabID, false, Material.rock, 36, false, false, false).setBlockName("mossyCobbleSlab");
+	soulSandSlab = new StandardSlab(soulSandSlabID, false, Material.grass, 104, false, true, false).setBlockName("soulSandSlab");
+	claySlab = new StandardSlab(claySlabID, false, Material.clay, 72, false, false, false).setBlockName("claySlab");
 }
 public void defineGeneralThings() {
 	invisBlockItem = new ItemInvisBlock(invisBlockItemID).setItemName("ItemInvisBlock");

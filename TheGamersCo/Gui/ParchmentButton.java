@@ -1,4 +1,4 @@
-package TheGamersCo;
+package TheGamersCo.Gui;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -10,9 +10,9 @@ import net.minecraft.client.gui.GuiButton;
 import org.lwjgl.opengl.GL11;
 
 @SideOnly(Side.CLIENT)
-public class Button extends GuiButton
+public class ParchmentButton extends GuiButton
 {
-    public Button(int par1, int par2, int par3, int par4, int par5,String par6Str) {
+    public ParchmentButton(int par1, int par2, int par3, int par4, int par5,String par6Str) {
 		super(par1, par2, par3, par4, par5, par6Str);
 		this.width = 200;
         this.height = 20;
@@ -87,9 +87,11 @@ public class Button extends GuiButton
             int var5 = this.getHoverState(this.field_82253_i);
             this.drawTexturedModalRect(this.xPosition, this.yPosition, 0, 46 + var5 * 20, this.width / 2, this.height);
             this.drawTexturedModalRect(this.xPosition + this.width / 2, this.yPosition, 200 - this.width / 2, 46 + var5 * 20, this.width / 2, this.height);
+            //200 is the width of the image / 2
+            
             this.mouseDragged(par1Minecraft, par2, par3);
             int var6 = 14737632;
-
+            
             if (!this.enabled)
             {
                 var6 = -6250336;
