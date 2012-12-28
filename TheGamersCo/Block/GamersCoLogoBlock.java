@@ -18,7 +18,7 @@ import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-     
+
 public class GamersCoLogoBlock extends Block
 {
 

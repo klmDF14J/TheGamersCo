@@ -3,6 +3,7 @@ package TheGamersCo.Block;
 import java.util.Random;
 
 import TheGamersCo.Core.Core;
+import TheGamersCo.Item.Items;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -34,7 +35,7 @@ public class InvisBlock extends Block {
         return blockIsNormal;
     }
 	public int idDropped(int par1, Random par2, int par3) {
-		return Core.invisBlockItem.shiftedIndex;
+		return Items.invisBlockItem.shiftedIndex;
 	}
 	
 

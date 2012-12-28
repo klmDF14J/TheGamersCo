@@ -111,7 +111,7 @@ public class GamersCoLogoGui extends GuiScreen {
 		}
 		if(guibutton.id == 4) {
 			pageTitle = "Changelog";
-			pageDescLine1 = "" + VersionChecker.getPresentableString();
+			pageDescLine1 = "Latest Version: " + VersionChecker.getVersion();
 			pageDescLine2 = "- Added New Texture To";
 			pageDescLine3 = "  The Information Panel";
 			pageDescLine4 = "- Improved Slab Code";

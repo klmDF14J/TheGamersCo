@@ -1,5 +1,6 @@
 package TheGamersCo.Item;
 
+import TheGamersCo.Block.Blocks;
 import TheGamersCo.Core.Core;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -63,7 +64,7 @@ public class ItemInvisBlock extends Item
 
             if (var11 == 0)
             {
-                par3World.setBlockWithNotify(par4, par5, par6, Core.invisBlock.blockID);
+                par3World.setBlockWithNotify(par4, par5, par6, Blocks.invisBlock.blockID);
                 System.out.println("Invisible Block Placed At: " + "X: " + par4 + " Y: " + par5 + " Z: " + par6);
             }
 

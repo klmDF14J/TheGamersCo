@@ -1,48 +1,50 @@
 package TheGamersCo.Registers;
 
-import TheGamersCo.Core.Core;
+import TheGamersCo.Block.Blocks;
+import TheGamersCo.Gui.Tabs;
+import TheGamersCo.Item.Items;
 
 public class CreativeTabRegister {
 	public static void setCreativeTabsForWoolSlabs() {
-		 Core.whiteWoolSlab.setCreativeTab(Core.theGamersCoTab);
-		 Core.orangeWoolSlab.setCreativeTab(Core.theGamersCoTab);
-		 Core.magnetaWoolSlab.setCreativeTab(Core.theGamersCoTab);
-		 Core.lightBlueWoolSlab.setCreativeTab(Core.theGamersCoTab);
-		 Core.yellowWoolSlab.setCreativeTab(Core.theGamersCoTab);
-		 Core.limeWoolSlab.setCreativeTab(Core.theGamersCoTab);
-		 Core.pinkWoolSlab.setCreativeTab(Core.theGamersCoTab);
-		 Core.greyWoolSlab.setCreativeTab(Core.theGamersCoTab);
-		 Core.lightGreyWoolSlab.setCreativeTab(Core.theGamersCoTab);
-		 Core.cyanWoolSlab.setCreativeTab(Core.theGamersCoTab);
-		 Core.purpleWoolSlab.setCreativeTab(Core.theGamersCoTab);
-		 Core.blueWoolSlab.setCreativeTab(Core.theGamersCoTab);
-		 Core.brownWoolSlab.setCreativeTab(Core.theGamersCoTab);
-		 Core.greenWoolSlab.setCreativeTab(Core.theGamersCoTab);
-		 Core.redWoolSlab.setCreativeTab(Core.theGamersCoTab);
-		 Core.blackWoolSlab.setCreativeTab(Core.theGamersCoTab);
+		 Blocks.whiteWoolSlab.setCreativeTab(Tabs.tabDeco);
+		 Blocks.orangeWoolSlab.setCreativeTab(Tabs.tabDeco);
+		 Blocks.magnetaWoolSlab.setCreativeTab(Tabs.tabDeco);
+		 Blocks.lightBlueWoolSlab.setCreativeTab(Tabs.tabDeco);
+		 Blocks.yellowWoolSlab.setCreativeTab(Tabs.tabDeco);
+		 Blocks.limeWoolSlab.setCreativeTab(Tabs.tabDeco);
+		 Blocks.pinkWoolSlab.setCreativeTab(Tabs.tabDeco);
+		 Blocks.greyWoolSlab.setCreativeTab(Tabs.tabDeco);
+		 Blocks.lightGreyWoolSlab.setCreativeTab(Tabs.tabDeco);
+		 Blocks.cyanWoolSlab.setCreativeTab(Tabs.tabDeco);
+		 Blocks.purpleWoolSlab.setCreativeTab(Tabs.tabDeco);
+		 Blocks.blueWoolSlab.setCreativeTab(Tabs.tabDeco);
+		 Blocks.brownWoolSlab.setCreativeTab(Tabs.tabDeco);
+		 Blocks.greenWoolSlab.setCreativeTab(Tabs.tabDeco);
+		 Blocks.redWoolSlab.setCreativeTab(Tabs.tabDeco);
+		 Blocks.blackWoolSlab.setCreativeTab(Tabs.tabDeco);
 	}
 	public static void setCreativeTabsForOreBlockSlabs() {
-		Core.ironBlockSlab.setCreativeTab(Core.theGamersCoTab);
-		Core.goldBlockSlab.setCreativeTab(Core.theGamersCoTab);
-		Core.diamondBlockSlab.setCreativeTab(Core.theGamersCoTab);
-		Core.emeraldBlockSlab.setCreativeTab(Core.theGamersCoTab);
-		Core.lapizBlockSlab.setCreativeTab(Core.theGamersCoTab);
+		Blocks.ironBlockSlab.setCreativeTab(Tabs.tabDeco);
+		Blocks.goldBlockSlab.setCreativeTab(Tabs.tabDeco);
+		Blocks.diamondBlockSlab.setCreativeTab(Tabs.tabDeco);
+		Blocks.emeraldBlockSlab.setCreativeTab(Tabs.tabDeco);
+		Blocks.lapizBlockSlab.setCreativeTab(Tabs.tabDeco);
 	}
 	public static void setCreativeTabsForMiscSlabs() {
-		Core.glowstoneSlab.setCreativeTab(Core.theGamersCoTab);
-		Core.obsidianSlab.setCreativeTab(Core.theGamersCoTab);
-		Core.netherrackSlab.setCreativeTab(Core.theGamersCoTab);
-		Core.snowSlab.setCreativeTab(Core.theGamersCoTab);
-		Core.mossyCobbleSlab.setCreativeTab(Core.theGamersCoTab);
-		Core.soulSandSlab.setCreativeTab(Core.theGamersCoTab);
-		Core.claySlab.setCreativeTab(Core.theGamersCoTab);
+		Blocks.glowstoneSlab.setCreativeTab(Tabs.tabDeco);
+		Blocks.obsidianSlab.setCreativeTab(Tabs.tabDeco);
+		Blocks.netherrackSlab.setCreativeTab(Tabs.tabDeco);
+		Blocks.snowSlab.setCreativeTab(Tabs.tabDeco);
+		Blocks.mossyCobbleSlab.setCreativeTab(Tabs.tabDeco);
+		Blocks.soulSandSlab.setCreativeTab(Tabs.tabDeco);
+		Blocks.claySlab.setCreativeTab(Tabs.tabDeco);
 	}
 	public static void setCreativeTabsForGeneralBlocks() {
-		Core.GamersCoLogo.setCreativeTab(Core.theGamersCoTab);
+		Blocks.GamersCoLogo.setCreativeTab(Tabs.tabDeco);
 	}
 	public static void setCreativeTabsForGeneralItems() {
 		
-		Core.invisBlockItem.setCreativeTab(Core.theGamersCoTab);
+		Items.invisBlockItem.setCreativeTab(Tabs.tabDeco);
 	}
 	public static void setAllCreativeTabs() {
 		setCreativeTabsForOreBlockSlabs();

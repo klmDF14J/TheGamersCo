@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import TheGamersCo.Core.Core;
+import TheGamersCo.Handlers.ConfigHandler;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -52,7 +53,7 @@ public class StandardSlab extends Block
     	
     }
     public void onEntityCollidedWithBlock(World par1World, int par2, int par3, int par4, Entity par5Entity) {
-    	if(this.blockID == Core.soulSandSlabID) {
+    	if(this.blockID == ConfigHandler.soulSandSlabID) {
         par5Entity.motionX *= 0.4D;
         par5Entity.motionZ *= 0.4D;
     	}
